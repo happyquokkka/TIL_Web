@@ -1013,6 +1013,77 @@ text-shadow:2px 2px 2px black; /* 가로 세로 크기 색상 순 */
 
 
 
+#### 배경 색상/ 이미지 관련 속성
+
+* 배경색
+
+  ```html
+  background-color:#00ff00;
+  background-color:#333;
+  ```
+
+* 배경 이미지/반복
+
+  ```html
+  background-image:url(back.png);
+  background-repeat:repeat;
+  background-repeat:no-repeat;
+  background-repeat:repeat-x;
+  background-repeat:repeat-y;
+  ```
+
+* 테두리 속성
+
+  * 테두리의 유형/ 두께/ 색상 지정
+
+  ```html
+  border:solid 1px red; /* 실선 1픽셀 빨간색 */
+  border-style:solid;
+  border-width:3px /* thin medium thick */
+  border-left:dotted;
+  border-right:double;
+  border-bottom:dashed;
+  border-top:solid;
+  border-color:red;
+  border-radius:10px; /* 모서리 둥글게 */
+  border-bottom-right-radius:50px;
+  ```
+
+* 여백 속성 (padding / margin)
+
+  ![](./18.png)
+
+* inline / block
+  * display에서 inline과 block의 차이
+    * `block`
+      * 행으로 배치
+      * 옆으로 나란히 배치 안 됨
+      * 여백 있음
+    * `inline`
+      * 옆으로 나란히 배치
+      * 여백 없이 내용물 만큼만 공간을 차지함
+    * `inline-block`
+      * 인라인, 블록, 성격 모두 포함
+
+
+
+#### 목록 관련 속성
+
+* type 유무
+
+  ```html
+  ul {list-style-type:square;}
+  ul {list-style-type:none;}
+  ```
+
+* 불릿 기호 없애고 가로로 배치
+
+  ```html
+  ul li {display:inline;}
+  ```
+
+  
+
 
 
 #### 위치 관련 속성
@@ -1028,4 +1099,16 @@ text-shadow:2px 2px 2px black; /* 가로 세로 크기 색상 순 */
     * 상위 요소가 static인 경우에는 브라우저 화면 기준
   * fixed
     * 브라우저 화면을 기준으로 고정 위치에 배치
+
+
+
+#### 겹침(레이어) 표현 속성
+
+* z-index 속성
+
+  * 요소들이 겹칠 때 순서 지정
+  * 나중에 배치하는 것이 위에 놓임
+  * z-index _값이 클수록 위에 놓임_
+
+  ![](./19.png)
 

@@ -1112,3 +1112,203 @@ text-shadow:2px 2px 2px black; /* 가로 세로 크기 색상 순 */
 
   ![](./19.png)
 
+
+
+#### 자식/자손 선택자 (상속 선택자)
+
+* 자식/자손의 개념
+
+<img src="./20.png" style="zoom:75%;" />
+
+
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>first-child 선택자</title>
+	<style type="text/css">
+		#content div{ /* content의 모든 자손 <div> */
+			width:400px;
+			height:50px;
+			border:solid 1px black;
+		}
+		/* div:first-child 작성 시 주의 : 콜론 앞으로 띄어쓰기 하면 안 됨 */
+		#content div:first-child{ /* 첫 번째 자손 <div> */
+			background:yellow;
+		}
+
+		#content div:first-child + div{ /* 두 번째 자손 <div> */
+			background:green;
+		}
+
+		/*#content div:first-child + div+div{ !* 세 번째 자손 <div> */
+		#content div:nth-child(3) { /* 세 번째 자손 <div> */
+			background: indigo;
+		}
+
+		#content div:nth-child(4) { /* 네 번째 자손 <div> */
+			background:pink;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="content">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+</html>
+```
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블에서 짝수 행 선택 </title>
+	<style type="text/css">		
+    #stdTable {
+        margin:0 auto;
+        border-collapse:collapse; /* 테이블을 단일 경계선으로 변경 */
+    }
+
+    #stdTable th {
+        color:white;
+        background-color:darkblue;
+    }
+    /* 아래와 같이 클래스 선택해도 동일함
+    .name {width:100px;}
+    .email {width:200px;}
+     */
+    #stdTable th.name {width:100px;}
+    #stdTable th.email {width:200px;}
+
+    #stdTable td {height:20px;}
+
+    /* 짝수행 선택 */
+    #stdTable tr:nth-child(2n) td {
+        background:yellow;
+    }
+
+    </style>
+</head>
+
+<body>
+    <table id="stdTable" border="1">
+        <tr> <th class="name">이름</th>
+                 <th class="email">이메일</th></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>        
+    </table>
+</body>
+</html>
+
+```
+
+
+
+
+
+#### 동적(반응) 선택자
+
+* 동적 선택자 (반응 선택자)
+  * 선택자: active - 마우스로 클릭한 태그 선택
+  * 선택자: hover - 마우스를 올린 태그
+* ex) 링크 태그
+  * a: active - 마우스로 클릭했을 때
+  * a: hover - 마우스를 올렸을 때
+  * a: link - 방문하지 않은 링크 스타일
+  * a: visited - 방문된 링크 스타일
+
+
+
+#### Overflow
+
+* overflow 속성
+  * 자식 요소가 부모 요소의 범위를 벗어났을 때 어떻게 처리할 것인지 지정
+  * hidden
+    * 부모 영역을 벗어나는 부분은 보이지 않게 처리
+  * scroll
+    * 스크롤바 표시 (가로/세로)
+  * auto
+    * 자동으로 필요한 부분에만 스크롤바 표시
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블에서 짝수 행 선택 </title>
+	<style type="text/css">		
+    #stdTable {
+        margin:0 auto;
+        border-collapse:collapse; /* 테이블을 단일 경계선으로 변경 */
+    }
+
+    #stdTable th {
+        color:white;
+        background-color:darkblue;
+    }
+    /* 아래와 같이 클래스 선택해도 동일함
+    .name {width:100px;}
+    .email {width:200px;}
+     */
+    #stdTable th.name {width:100px;}
+    #stdTable th.email {width:200px;}
+
+    #stdTable td {height:20px;}
+
+    /* 짝수행 선택 */
+    #stdTable tr:nth-child(2n) td {
+        background:yellow;
+    }
+
+    </style>
+</head>
+
+<body>
+    <table id="stdTable" border="1">
+        <tr> <th class="name">이름</th>
+                 <th class="email">이메일</th></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>        
+    </table>
+</body>
+</html>
+```
+
+
+
+#### 투명도/ 가시성
+
+* 투명도(불투명도)
+  * opacity 속성
+    * 0 ~ 1 사이의 값 지정
+    * 0 : 투명
+    * 1 : 불투명
+    * 0.5 : 반투명
+* 가시성
+  * visibility 속성
+    * hidden : 숨김
+    * visible : 보임

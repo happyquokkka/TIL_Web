@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>연습문제1</title>
+    <style>
+    div {
+    width: 100px;
+    height: 50px;
+    line-height: 50px; /* 글자를 수직 중앙정렬 합니다. */
+    text-align: center;  /* 글자를 수평 중앙정렬 합니다. */
+    color: white;
+    background-color: teal;
+    border-radius: 20px;
+    }
+    </style>
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var $div = $("div")
+                $div.hover(function() {
+                    $div.animate({opacity:'0.5'});
+                }, function() {
+                $div.animate({opacity:'1'});
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div>버튼</div>
+</body>
+</html>

@@ -18,17 +18,13 @@
     <script src="jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var $div = $("div")
-            var $color = $(['red', 'green', 'blue'])
-            var aryLen = $color.length;
-            $div.onclick(function() {
-                if($aryLen % 3 == 0) {
-                    $div.css('background-color', 'red');
-                } else if(aryLen % 3 == 3) {
-                    $div.css('background-color', 'green');
-                } else {
-                    $div.css('background-color', 'blue');
-                }
+            var color = ['red', 'green', 'blue'];
+            var i = 0;
+            $('div').click(function() {
+                i++;
+                div.css('background-color',color[i]);
+                if(i==3)
+                i=0;
             });
         });
     </script>

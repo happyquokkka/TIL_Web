@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>연습문제2</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var colors=['red','green','blue'] // 클릭 시 반복돼야 하는 색상
+        var currentColor=0; // 현재 표시되고 있는 색상을 의미하는 변수
+        $('div').css('backgroundColor',colors[currentColor]
+                    ).click(function() { // 클릭 이벤트 함수이기 때문에 클릭할 때마다 실행되는 함수
+                          currentColor = (currentColor+1) % 3;
+                          $(this).css({'backgroundColor':colors[currentColor]}); // css 함수의 종료
+        }); // click 이벤트 함수의 종료
+
+      }); // ready 함수 종료
+    </script>
+
+  <style>
+      div {
+        width:100px;
+        height:50px;
+        line-height:50px; /* 글자를 수직 중앙 정렬 */
+        text-align: center;
+        color:white;
+        border:none;
+        border-radius:10px;
+      }
+    </style>
+
+</head>
+<body>
+  <div>클릭</div>
+</body>
+</html>

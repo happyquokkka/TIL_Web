@@ -15,7 +15,19 @@
 		</style>
 		<script src="jquery-3.5.1.min.js"></script>
 		<script type="text/javascript">
+            $(document).ready(function() {
+               $('#startBtn').on('click',function() {
+                  $('div').each(function(index){
+                     $(this).delay(index*500).animate({left:500},'slow');
+                  });
+               });
+              $('#backBtn').on('click',function() {
+                  $('div').each(function(index){
+                     $(this).delay(index*500).animate({left:0},'slow');
+                  });
+               });
 
+            });
 		</script>
     </head>        
      <body> 
